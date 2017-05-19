@@ -27,14 +27,13 @@
 <div class="container">
     <div class="panel panel-primary">
         <!-- Default panel contents -->
-        <div class="panel-heading">Branş Sıralaması</div>
+        <div class="panel-heading">BÖTE Mülakat Sıralaması</div>
         <div class="panel-body">
             <!-- Table -->
             <table id="siralamaListesi" class="table table-responsive table-striped table-bordered dataTable">
                 <thead>
                 <th>Sıra</th>
                 <th>Puan</th>
-                <th>Genel Sıralama</th>
                 <th>Branş</th>
                 </thead>
                 <tbody>
