@@ -1,6 +1,7 @@
 <?php
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
+error_reporting(E_ALL);
 /**
  * Created by PhpStorm.
  * User: sametatabasch
@@ -30,8 +31,9 @@ $tcno = strval(strip_tags(trim($_GET['t'])));
 $brans = strval(strip_tags(trim($_GET['b'])));
 
 $tcno= md5(sha1($tcno));
-if ($brans != '' || $puan != 0)
+if ($puan != 0 && $puan<100 && $puan>60)
     listeyeEkle($puan, $tcno, $brans);
+else echo 'Hatalı Giriş';
 ?>
 
 <h3 class=""> Kayıt edilen puan = <?= $puan ?></h3>
