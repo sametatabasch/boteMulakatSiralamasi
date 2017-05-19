@@ -21,7 +21,8 @@
         /*yes ve no butonları tıklama dinleyicisi ekle*/
         document.querySelector('.yes').addEventListener('click',
             function () {
-                document.querySelector('#window .msg').innerHTML = '<iframe src="https://botemulakatsiralamasi.gencbilisim.net/ekle.php?p=' + puan + '&t=' + tcno + '&b=' + brans + '" width="100%" height="100%">';
+                var url= encodeURI('https://botemulakatsiralamasi.gencbilisim.net/ekle.php?p=' + puan + '&t=' + tcno + '&b=' + brans + '');
+                document.querySelector('#window .msg').innerHTML = '<iframe src="'+url+'" width="100%" height="100%">';
             });
     } else {
         alert("Bu kod sadece 2017 Mülakatları için kullanılır.")
