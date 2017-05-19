@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BÖTE Tüm alanlar dahil braş Sıralaması</title>
+    <title>BÖTE Mülakat Sıralaması</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
