@@ -38,7 +38,7 @@
                 </thead>
                 <tbody>
                 <?php $s = 1;
-                foreach ($db->query("SELECT puan,brans FROM liste ORDER BY puan ASC ") as $row): ?>
+                foreach ($db->query("SELECT puan,brans FROM liste ORDER BY puan DESC ") as $row): ?>
                     <tr>
                         <td><?= $s ?></td>
                         <td><?= $row['puan'] ?></td>
