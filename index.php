@@ -35,14 +35,16 @@
                 <th>Sıra</th>
                 <th>Puan</th>
                 <th>Branş</th>
+                <th>Ekleme Tarihi</th>
                 </thead>
                 <tbody>
                 <?php $s = 1;
-                foreach ($db->query("SELECT puan,brans FROM liste ORDER BY puan DESC ") as $row): ?>
+                foreach ($db->query("SELECT puan,brans,tarih FROM liste ORDER BY puan DESC ") as $row): ?>
                     <tr>
                         <td><?= $s ?></td>
                         <td><?= $row['puan'] ?></td>
                         <td><?= $row['brans'] ?></td>
+                        <td><?= $row['tarih'] ?></td>
                     </tr>
                     <?php $s++; endforeach; ?>
                 </tbody>
