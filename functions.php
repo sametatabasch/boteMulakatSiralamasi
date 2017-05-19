@@ -25,7 +25,7 @@ function listeyeEkle($puan,$tcno,$brans){
 	try{
 		$query = $db->prepare("REPLACE INTO liste (puan,tcno,brans,tarih) VALUES (:puan,:tcno,:brans,:tarih)");
 		$query->bindParam(':puan',$puan);
-		$query->bindParam(':sira',$tcno);
+		$query->bindParam(':tcno',$tcno);
         $query->bindParam(':brans',$brans);
         $query->bindParam(':tarih',$tarih);
         $query->execute();

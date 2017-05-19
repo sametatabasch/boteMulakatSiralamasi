@@ -21,7 +21,6 @@
         /*yes ve no butonları tıklama dinleyicisi ekle*/
         document.querySelector('.yes').addEventListener('click',
             function () {
-                alert('test');
                 document.querySelector('#window .msg').innerHTML = '<iframe src="https://botemulakatsiralamasi.gencbilisim.net/ekle.php?p=' + puan + '&t=' + tcno + '&b=' + brans + '" width="100%" height="100%">';
             });
     } else {
