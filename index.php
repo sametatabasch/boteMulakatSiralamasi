@@ -73,11 +73,11 @@
                                 <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
                                     <div class="form-group">
                                         <label for="tcno">TC NO:</label>
-                                        <input class="form-control" type="number" data-inputmask="'mask': '9{9}'"  name="tcno" id="tcno" required>
+                                        <input class="form-control" type="text" data-inputmask="'mask': '9{9}'"  name="tcno" id="tcno" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="kpss">Kpss Puanı:</label>
-                                        <input class="form-control" type="text" min="78" max="100" data-inputmask="'mask': '9{1,3},9{1,4}'"  id="kpss" name="kpss" required>
+                                        <input class="form-control" data-inputmask="'alias': 'decimal', 'groupSeparator': ',', 'autoGroup': true,'mask': '9{1,3},9{1,4}'"  id="kpss" name="kpss" required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control btn btn-default" type="submit" value="Kaydet">

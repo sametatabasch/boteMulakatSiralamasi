@@ -18,7 +18,7 @@ $tcno = md5(sha1($tcno));
 if ($kpssPuan < 100 && $kpssPuan > 78)
     kpssPuanıEkle($tcno, $kpssPuan);
 else {
-    $response = array('status' => 'success', 'msg' => "Geçersiz veriler");
+    $response = array('status' => 'danger', 'msg' => "Geçersiz veriler");
     header('Content-Type: application/json');
     echo json_encode($response);
 }
