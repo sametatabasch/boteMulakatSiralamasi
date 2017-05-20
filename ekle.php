@@ -31,7 +31,7 @@ $tcno = strval(strip_tags(trim($_GET['t'])));
 $brans = strval(strip_tags(trim($_GET['b'])));
 
 $tcno= md5(sha1($tcno));
-if ($puan<100 && $puan>60)
+if ($puan<100 && $puan>60 && $brans==="Bilişim Teknolojileri")
     listeyeEkle($puan, $tcno, $brans);
 else echo 'Hatalı Giriş';
 ?>
