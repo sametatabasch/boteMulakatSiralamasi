@@ -23,12 +23,14 @@ function listeyeEkle($puan, $tcno, $brans)
 {
     global $db;
     $tarih = date('d.m.Y');
+    $kpss=0;
     try {
-        $query = $db->prepare("REPLACE INTO liste (puan,tcno,brans,tarih) VALUES (:puan,:tcno,:brans,:tarih)");
+        $query = $db->prepare("REPLACE INTO liste (puan,kpss,tcno,brans,tarih) VALUES (:puan,:kpss,:tcno,:brans,:tarih)");
         $query->bindParam(':puan', $puan);
         $query->bindParam(':tcno', $tcno);
         $query->bindParam(':brans', $brans);
         $query->bindParam(':tarih', $tarih);
+        $query->bindParam(':kpss', $kpss);
         $query->execute();
     } catch (PDOException $e) {
         die('Hata: ' . $e->getMessage());
