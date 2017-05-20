@@ -69,11 +69,11 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="tcno">TC NO:</label>
-                                        <input class="form-control" type="number" maxlength="11" name="tcno" id="tcno" required>
+                                        <input class="form-control" type="number" max="99999999999" min="10000000000" name="tcno" id="tcno" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="kpss">Kpss Puanı:</label>
-                                        <input class="form-control" type="number" id="kpss" name="kpss" required>
+                                        <input class="form-control" type="number" min="78" max="100" id="kpss" name="kpss" required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control btn btn-default" type="submit" value="Kaydet">
