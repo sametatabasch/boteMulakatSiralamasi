@@ -73,7 +73,7 @@
                                 <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
                                     <div class="form-group">
                                         <label for="tcno">TC NO:</label>
-                                        <input class="form-control" type="text" data-inputmask="'mask': '9{9}'"  name="tcno" id="tcno" required>
+                                        <input class="form-control" type="text" data-inputmask="'mask': '9{11}'"  name="tcno" id="tcno" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="kpss">Kpss Puanı:</label>
