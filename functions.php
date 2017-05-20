@@ -58,5 +58,5 @@ function kpssPuanıEkle($tcno, $kpss)
     }
     if ($query->rowCount() > 0)
         return $response = array('status' => 'success', 'msg' => "KPSS Puanı eklenmiştir");
-    else return $response = array('status' => 'danger', 'msg' => 'Mülakat Puanınız listede bulunamadı. <br> İlk olarak http://bit.ly/2rDItjA bağlantıda anlatıldığı gibi Mülakat puanınızı listeye eklemelisiniz. ');
+    else return $response = array('status' => 'danger', 'msg' => '<b class="text-center">Mülakat Puanınız listede bulunamadı.</b> <br> İlk olarak <a href="http://bit.ly/2rDItjA" class="alert-link">http://bit.ly/2rDItjA</a> bağlantıda anlatıldığı gibi mülakat puanınızı listeye eklemelisiniz.');
 }

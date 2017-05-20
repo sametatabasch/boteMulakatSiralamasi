@@ -95,12 +95,16 @@
                             data   : $(this).serializeArray(),
                             success: function (returnData) {
                                 $('#kpssPuanGirModalBody').append(
-                                    '<div class="alert alert-' + returnData['status'] + ' alert-dismissable">' +
+                                    '<div class="alert alert-' + returnData['status'] + ' alert-dismissable fade in">' +
                                     '<i class="fa fa-check"></i>' +
                                     '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
                                     '' + returnData['msg'] +
                                     '</div>'
                                 );
+                                $('#kpssPuanGir')[0].reset();
+                                var z= setInterval(function () {
+                                    $('#kpssPuanGirModalBody .alert').alert('close');
+                                },5000);
                             }
                         });
                         return false;
