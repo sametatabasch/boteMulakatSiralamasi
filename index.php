@@ -118,7 +118,7 @@
                 </thead>
                 <tbody>
                 <?php $s = 1;
-                foreach ($db->query("SELECT puan,brans,tarih FROM liste ORDER BY puan DESC, kpss DESC ") as $row): ?>
+                foreach ($db->query("SELECT puan,brans,tarih,kpss FROM liste ORDER BY puan DESC, kpss DESC ") as $row): ?>
                     <tr>
                         <td><?= $s ?></td>
                         <td><?= $row['puan'] ?></td>
