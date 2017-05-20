@@ -69,7 +69,6 @@
                                 <h4 class="modal-title" id="kpssModalLabel">Kpss Puanı Ekle</h4>
                             </div>
                             <div class="modal-body" id="kpssPuanGirModalBody">
-                                YAPIM AŞAMASINDA
                                 <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
                                     <div class="form-group">
                                         <label for="tcno">TC NO:</label>
@@ -112,16 +111,18 @@
             <table id="siralamaListesi" class="table table-responsive table-striped table-bordered dataTable">
                 <thead>
                 <th>Sıra</th>
-                <th>Puan</th>
+                <th>Mülakat</th>
+                <th>KPSS</th>
                 <th>Branş</th>
                 <th>Ekleme Tarihi</th>
                 </thead>
                 <tbody>
                 <?php $s = 1;
-                foreach ($db->query("SELECT puan,brans,tarih FROM liste ORDER BY puan DESC ") as $row): ?>
+                foreach ($db->query("SELECT puan,brans,tarih FROM liste ORDER BY puan DESC, kpss DESC ") as $row): ?>
                     <tr>
                         <td><?= $s ?></td>
                         <td><?= $row['puan'] ?></td>
+                        <td><?= $row['kpss'] ?></td>
                         <td><?= $row['brans'] ?></td>
                         <td><?= $row['tarih'] ?></td>
                     </tr>
