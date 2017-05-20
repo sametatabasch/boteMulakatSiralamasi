@@ -20,7 +20,7 @@ if ($kpssPuan < 100 && $kpssPuan > 78) {
     header('Content-Type: application/json');
     echo json_encode($response);
 } else {
-    $response = array('status' => 'danger', 'msg' => "Geçersiz veriler");
+    $response = array('status' => 'danger', 'msg' => "Veriler geçersiz.");
     header('Content-Type: application/json');
     echo json_encode($response);
 }

@@ -32,7 +32,6 @@ function listeyeEkle($puan, $tcno, $brans)
         $query->bindParam(':brans', $brans);
         $query->bindParam(':tarih', $tarih);
         $query->execute();
-        echo $query->queryString;
     } catch (PDOException $e) {
         die('Hata: ' . $e->getMessage());
     }
