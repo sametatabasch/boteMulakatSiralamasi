@@ -23,7 +23,7 @@ function listeyeEkle($puan, $tcno, $brans)
 {
     global $db;
     $tarih = date('d.m.Y');
-    $kpss=0;
+    $kpss = 0;
     try {
         $query = $db->prepare("REPLACE INTO liste (puan,kpss,tcno,brans,tarih) VALUES (:puan,:kpss,:tcno,:brans,:tarih)");
         $query->bindParam(':puan', $puan);
@@ -48,13 +48,15 @@ function kpssPuanıEkle($tcno, $kpss)
     global $db;
     $tarih = date('d.m.Y');
     try {
-        $query = $db->prepare("Update liste SET tarih=:tarih, kpss=:kpss WHERE tcno=:tcno");
-        $query->bindParam(':tarih', $tarih,PDO::PARAM_STR);
+        $query = $db->prepare("UPDATE liste SET tarih=:tarih, kpss=:kpss WHERE tcno=:tcno");
+        $query->bindParam(':tarih', $tarih, PDO::PARAM_STR);
         $query->bindParam(':kpss', $kpss);
-        $query->bindParam(':tcno', $tcno,PDO::PARAM_STR);
+        $query->bindParam(':tcno', $tcno, PDO::PARAM_STR);
         $query->execute();
     } catch (PDOException $e) {
         return $response = array('status' => 'danger', 'msg' => 'Hata: ' . $e->getMessage());
     }
-    return $response = array('status' => 'success', 'msg' => "KPSS Puanı eklenmiştir");
+    if ($query->rowCount() > 0)
+        return $response = array('status' => 'success', 'msg' => "KPSS Puanı eklenmiştir");
+    else return $response = array('status' => 'danger', 'msg' => 'Mülakat Puanınız listede bulunamadı. <br> İlk olarak http://bit.ly/2rDItjA bağlantıda anlatıldığı gibi Mülakat puanınızı listeye eklemelisiniz. ');
 }
