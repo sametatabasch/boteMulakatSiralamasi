@@ -15,9 +15,11 @@ $tcno = strval(strip_tags(trim($_POST['tcno'])));
 
 $tcno = md5(sha1($tcno));
 
-if ($kpssPuan < 100 && $kpssPuan > 78)
-    kpssPuanıEkle($tcno, $kpssPuan);
-else {
+if ($kpssPuan < 100 && $kpssPuan > 78) {
+    $response = kpssPuanıEkle($tcno, $kpssPuan);
+    header('Content-Type: application/json');
+    echo json_encode($response);
+} else {
     $response = array('status' => 'danger', 'msg' => "Geçersiz veriler");
     header('Content-Type: application/json');
     echo json_encode($response);

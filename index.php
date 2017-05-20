@@ -95,7 +95,7 @@
                             url    : $(this).attr('action'),
                             data   : $(this).serializeArray(),
                             success: function (returnData) {
-                                $('#kpssPuanGirModalBody').html(
+                                $('#kpssPuanGirModalBody').append(
                                     '<div class="alert alert-' + returnData['status'] + ' alert-dismissable">' +
                                     '<i class="fa fa-check"></i>' +
                                     '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
