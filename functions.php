@@ -27,11 +27,12 @@ function listeyeEkle($puan, $tcno, $brans)
     try {
         $query = $db->prepare("REPLACE INTO liste (puan,kpss,tcno,brans,tarih) VALUES (:puan,:kpss,:tcno,:brans,:tarih)");
         $query->bindParam(':puan', $puan);
+        $query->bindParam(':kpss', $kpss);
         $query->bindParam(':tcno', $tcno);
         $query->bindParam(':brans', $brans);
         $query->bindParam(':tarih', $tarih);
-        $query->bindParam(':kpss', $kpss);
         $query->execute();
+        echo $query->queryString;
     } catch (PDOException $e) {
         die('Hata: ' . $e->getMessage());
     }
@@ -48,9 +49,9 @@ function kpssPuanıEkle($tcno, $kpss)
     $tarih = date('d.m.Y');
     try {
         $query = $db->prepare("Update liste SET tarih=:tarih, kpss=:kpss WHERE tcno=:tcno");
-        $query->bindParam(':tcno', $tcno);
-        $query->bindParam(':tarih', $tarih);
+        $query->bindParam(':tarih', $tarih,PDO::PARAM_STR);
         $query->bindParam(':kpss', $kpss);
+        $query->bindParam(':tcno', $tcno,PDO::PARAM_STR);
         $query->execute();
     } catch (PDOException $e) {
         return $response = array('status' => 'danger', 'msg' => 'Hata: ' . $e->getMessage());
