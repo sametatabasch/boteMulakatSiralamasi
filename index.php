@@ -64,20 +64,22 @@
                 <div class="modal fade kpssPuanGir" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                     <div class="modal-dialog modal-sm" role="document">
                         <div class="modal-content">
-                            YAPIM AŞAMASINDA
-                            <form>
-                                <div class="form-group">
-                                    <label for="tcno">TC NO:</label>
-                                    <input class="form-control" type="number" maxlength="11" name="tcno" idtcno>
-                                </div>
-                                <div class="form-group">
-                                    <label for="kpss">Kpss Puanı:</label>
-                                    <input class="form-control" type="number" id="kpss" name="kpss">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control btn btn-default" type="submit" value="Kaydet">
-                                </div>
-                            </form>
+                            <div class="modal-body">
+                                YAPIM AŞAMASINDA
+                                <form>
+                                    <div class="form-group">
+                                        <label for="tcno">TC NO:</label>
+                                        <input class="form-control" type="number" maxlength="11" name="tcno" id="tcno" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kpss">Kpss Puanı:</label>
+                                        <input class="form-control" type="number" id="kpss" name="kpss" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control btn btn-default" type="submit" value="Kaydet">
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
