@@ -12,7 +12,7 @@ require_once "functions.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>BÖTE Tüm alanlar dahil braş Sıralaması</title>
+    <title>BÖTE Mülakat Sıralaması</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -26,14 +26,18 @@ require_once "functions.php"; ?>
 </head>
 <body>
 <?php
-$puan = floatval(strip_tags(trim(str_replace(',', '.', $_GET['p']))));
-$tcno = strval(strip_tags(trim($_GET['t'])));
-$brans = strval(strip_tags(trim($_GET['b'])));
+$kpssPuan = floatval(strip_tags(trim(str_replace(',', '.', $_POST['kpss']))));
+$tcno = strval(strip_tags(trim($_POST['tcno'])));
 
 $tcno= md5(sha1($tcno));
-if ($puan<100 && $puan>60)
-    listeyeEkle($puan, $tcno, $brans);
-else echo 'Hatalı Giriş';
+
+if ($puan<100 && $puan>78)
+    kpssPuanıEkle($tcno,$kpssPuan);
+else{
+    $response= array('status'=>'success','msg'=>"Geçersiz veriler");
+    header('Content-Type: application/json');
+    echo json_encode($response);
+}
 ?>
 
 <h3 class=""> Kayıt edilen puan = <?= $puan ?></h3>

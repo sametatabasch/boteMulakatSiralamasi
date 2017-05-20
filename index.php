@@ -61,12 +61,16 @@
                 <div class="btn-group pull-right">
                     <button type="button" class="btn  btn-success pull-right" data-toggle="modal" data-target=".kpssPuanGir">KPSS Puanı ekle</button>
                 </div>
-                <div class="modal fade kpssPuanGir" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal fade kpssPuanGir" tabindex="-1" role="dialog" aria-labelledby="kpssModalLabel">
                     <div class="modal-dialog modal-sm" role="document">
                         <div class="modal-content">
-                            <div class="modal-body">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="kpssModalLabel">Kpss Puanı Ekle</h4>
+                            </div>
+                            <div class="modal-body" id="kpssPuanGirModalBody">
                                 YAPIM AŞAMASINDA
-                                <form>
+                                <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
                                     <div class="form-group">
                                         <label for="tcno">TC NO:</label>
                                         <input class="form-control" type="number" max="99999999999" min="10000000000" name="tcno" id="tcno" required>
@@ -84,6 +88,25 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
+                <script type="text/javascript">
+                    $('#kpssPuanGir').on('submit',function () {
+                        $.ajax({
+                            type   : 'POST',
+                            url    : $(this).attr('action'),
+                            data   : $(this).serializeArray(),
+                            success: function (returnData) {
+                                $('kpssPuanGirModalBody').html(
+                                    '<div class="alert alert-' + returnData['status'] + ' alert-dismissable">' +
+                                    '<i class="fa fa-check"></i>' +
+                                    '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
+                                    '' + returnData['msg'] +
+                                    '</div>'
+                                );
+                            }
+                        });
+                        return false;
+                    });
+                </script>
             </div>
             <!-- Table -->
             <table id="siralamaListesi" class="table table-responsive table-striped table-bordered dataTable">
