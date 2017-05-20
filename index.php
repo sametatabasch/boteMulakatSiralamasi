@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="kpss">Kpss Puanı:</label>
-                                        <input class="form-control" data-inputmask="'alias': 'decimal', 'groupSeparator': ',', 'autoGroup': true,'mask': '9{1,3},9{1,4}'"  id="kpss" name="kpss" required>
+                                        <input class="form-control" data-inputmask="'alias': 'decimal', 'groupSeparator': ',', 'mask': '9{1,3},9{1,4}','min':'78,0000','max':'100,000'"  id="kpss" name="kpss" required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control btn btn-default" type="submit" value="Kaydet">
