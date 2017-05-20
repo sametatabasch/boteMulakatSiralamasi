@@ -40,7 +40,7 @@
         ga('send', 'pageview');
 
     </script>
-
+    <script type="text/javascript" src="js/jquery.inputmask.bundle.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -73,11 +73,11 @@
                                 <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
                                     <div class="form-group">
                                         <label for="tcno">TC NO:</label>
-                                        <input class="form-control" type="number" max="99999999999" min="10000000000" name="tcno" id="tcno" required>
+                                        <input class="form-control" type="number" data-inputmask="'mask': '9{9}'"  name="tcno" id="tcno" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="kpss">Kpss Puanı:</label>
-                                        <input class="form-control" type="number" min="78" max="100" id="kpss" name="kpss" required>
+                                        <input class="form-control" type="text" min="78" max="100" data-inputmask="'mask': '9{1,3},9{1,4}'"  id="kpss" name="kpss" required>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control btn btn-default" type="submit" value="Kaydet">
@@ -95,7 +95,7 @@
                             url    : $(this).attr('action'),
                             data   : $(this).serializeArray(),
                             success: function (returnData) {
-                                $('kpssPuanGirModalBody').html(
+                                $('#kpssPuanGirModalBody').html(
                                     '<div class="alert alert-' + returnData['status'] + ' alert-dismissable">' +
                                     '<i class="fa fa-check"></i>' +
                                     '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
@@ -161,5 +161,10 @@
     </div>
 </div>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(":input").inputmask();
+    });
+</script>
 </body>
 </html>
