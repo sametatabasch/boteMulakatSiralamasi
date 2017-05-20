@@ -47,7 +47,7 @@ function kpssPuanıEkle($tcno, $kpss)
     global $db;
     $tarih = date('d.m.Y');
     try {
-        $query = $db->prepare("Update liste set tarih=':tarih', kpss=:kpss WHERE tcno=':tcno'");
+        $query = $db->prepare("Update liste SET tarih=:tarih, kpss=:kpss WHERE tcno=:tcno");
         $query->bindParam(':tcno', $tcno);
         $query->bindParam(':tarih', $tarih);
         $query->bindParam(':kpss', $kpss);
