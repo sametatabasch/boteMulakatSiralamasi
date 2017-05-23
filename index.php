@@ -109,7 +109,7 @@
                         <p>En yüksek KPSS - Mülakat Farkı</p>
                     </div>
                     <div class="icon">
-                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        <i class="glyphicon glyphicon-sort"></i>
                     </div>
                     <a href="#" class="small-box-footer" data-toggle="modal" data-target=".yapimasamasi">
                         DetaylıBilgi <i class="glyphicon glyphicon-circle-arrow-right"></i>
