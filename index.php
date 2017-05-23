@@ -5,7 +5,7 @@
     <title>BÖTE Mülakat Sıralaması</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/style.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script src="js/jquery-1.12.3.js"></script>
@@ -52,79 +52,69 @@
 
         </div>
         <div class="panel-body">
-            <div class="alert alert-info" role="alert">
-                <div class="pull-left">
-                    Lütfen sonucunuzu
-                    <a class="alert-link" href="https://sonuc.osym.gov.tr/Sorgu.aspx?SonucID=4110"> 2016 KPSS sonuç
-                        Sayfasından</a>
-                    kopyalayarak olduğu gibi yazın.
-                </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>128</h3>
 
-                <div class="btn-group pull-right">
-                    <button type="button" class="btn  btn-success pull-right" data-toggle="modal"
-                            data-target=".kpssPuanGir">KPSS Puanı ekle
-                    </button>
-                </div>
-                <div class="modal fade kpssPuanGir" tabindex="-1" role="dialog" aria-labelledby="kpssModalLabel">
-                    <div class="modal-dialog modal-sm" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                            aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="kpssModalLabel">Kpss Puanı Ekle</h4>
-                            </div>
-                            <div class="modal-body" id="kpssPuanGirModalBody">
-                                <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
-                                    <div class="form-group">
-                                        <label for="tcno">TC NO:</label>
-                                        <input class="form-control" type="text" data-inputmask="'mask': '9{11}'"
-                                               name="tcno" id="tcno" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="kpss">Kpss Puanı:</label>
-                                        <input class="form-control" data-inputmask="'mask': '1{*}9{1,2}.9{1,4}'"
-                                               id="kpss" name="kpss" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control btn btn-default" type="submit" value="Kaydet">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        <p>Mülakat puanı girildi</p>
                     </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".yapimasamasi">
+                        Sende Ekle <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="clearfix"></div>
-                <script type="text/javascript">
-                    $('#kpssPuanGir').on('submit', function () {
-                        $.ajax({
-                            type: 'POST',
-                            url: $(this).attr('action'),
-                            data: $(this).serializeArray(),
-                            success: function (returnData) {
-                                $('#kpssPuanGirModalBody').append(
-                                    '<div class="alert alert-' + returnData['status'] + ' alert-dismissable fade in">' +
-                                    '<i class="fa fa-check"></i>' +
-                                    '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
-                                    '' + returnData['msg'] +
-                                    '</div>'
-                                );
-                                $('#kpssPuanGir')[0].reset();
-                                var z = setInterval(function () {
-                                    $('#kpssPuanGirModalBody .alert').alert('close');
-                                }, 5000);
-                            }
-                        });
-                        return false;
-                    });
-                </script>
             </div>
-            <div class="well">Mülakat Puanlarının Frekans Grafiğini Görmek için sağdaki butona tıklayın.
-                <div class="btn-group pull-right">
-                    <button type="button" class="btn  btn-info pull-right" data-toggle="modal"
-                            data-target=".mukalatFrekans">Mülakat Puan Frekansları
-                    </button>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>128</h3>
+
+                        <p>KPSS puanı girildi</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".kpssPuanGir">
+                        Sende Ekle <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="clearfix"></div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>85</h3>
+
+                        <p>En çok girilen Mülakat Puanu</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".mukalatFrekans">
+                        DetaylıBilgi <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>+5</h3>
+
+                        <p>En yüksek KPSS - Mülakat Farkı</p>
+                    </div>
+                    <div class="icon">
+                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                    </div>
+                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".yapimasamasi">
+                        DetaylıBilgi <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                    </a>
+                </div>
             </div>
             <!-- Table -->
             <table id="siralamaListesi" class="table table-responsive table-striped table-bordered dataTable">
@@ -182,7 +172,6 @@
 </div>
 
 <!-- Grafik modal-->
-
 <div class="modal fade  mukalatFrekans" tabindex="-1" role="dialog" aria-labelledby="mulakatFrakansModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -233,8 +222,84 @@
         </div>
     </div>
 </div>
+<!-- KPSS Puan gir Modal -->
+<div class="modal fade kpssPuanGir" tabindex="-1" role="dialog" aria-labelledby="kpssModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="kpssModalLabel">Kpss Puanı Ekle</h4>
+            </div>
+            <div class="modal-body" id="kpssPuanGirModalBody">
+                <div class="alert alert-info" role="alert">
+                    <div class="pull-left">
+                        Lütfen sonucunuzu
+                        <a class="alert-link" href="https://sonuc.osym.gov.tr/Sorgu.aspx?SonucID=4110"> 2016 KPSS sonuç
+                            Sayfasından</a>
+                        kopyalayarak olduğu gibi yazın.
+                    </div>
 
+                    <div class="clearfix"></div>
+                </div>
 
+                <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
+                    <div class="form-group">
+                        <label for="tcno">TC NO:</label>
+                        <input class="form-control" type="text" data-inputmask="'mask': '9{11}'"
+                               name="tcno" id="tcno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kpss">Kpss Puanı:</label>
+                        <input class="form-control" data-inputmask="'mask': '1{*}9{1,2}.9{1,4}'"
+                               id="kpss" name="kpss" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control btn btn-default" type="submit" value="Kaydet">
+                    </div>
+                </form>
+                <script type="text/javascript">
+                    $('#kpssPuanGir').on('submit', function () {
+                        $.ajax({
+                            type: 'POST',
+                            url: $(this).attr('action'),
+                            data: $(this).serializeArray(),
+                            success: function (returnData) {
+                                $('#kpssPuanGirModalBody').append(
+                                    '<div class="alert alert-' + returnData['status'] + ' alert-dismissable fade in">' +
+                                    '<i class="fa fa-check"></i>' +
+                                    '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
+                                    '' + returnData['msg'] +
+                                    '</div>'
+                                );
+                                $('#kpssPuanGir')[0].reset();
+                                var z = setInterval(function () {
+                                    $('#kpssPuanGirModalBody .alert').alert('close');
+                                }, 5000);
+                            }
+                        });
+                        return false;
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Yapım Aşaması modal-->
+<div class="modal fade  yapimasamasi" tabindex="-1" role="dialog" aria-labelledby="yapimasamasiModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="yapimasamasiModalLabel">Mülakat Puanlarının Frekans Grafiği</h4>
+            </div>
+            <div class="modal-body">
+                Yapım Aşamasında
+            </div>
+        </div>
+    </div>
+</div>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
