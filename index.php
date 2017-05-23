@@ -298,7 +298,35 @@
                 <h4 class="modal-title" id="mulakatPuaniEkleModalLabel">Mülakat Puanı Nasıl Eklenir</h4>
             </div>
             <div class="modal-body">
-                Yapım Aşamasında
+                <p> Bilgisayarında FireFox tarayıcı kullananlar aşağıdaki eklentiyi kurarak Mülakat puanlarını
+                    ekleyebilirler.</p>
+
+                <a class="btn btn-lg btn-success" href="http://bit.ly/2rtC8um">Firefox Eklentisini indir.</a>
+                <p>Firefox tarayıcı kullananlar yukarıdaki linkte bulunan eklentiyi kullanarak mülakat puanını kolayca
+                    listeye ekleyebilirler.
+                    Butona tıklayıp eklentiyi indirin ve çalıştırarak kurulumu yapın. Eklentiyi kurduktan sonra
+                    Tarayıcınızın sağ üst köşesinde eklentinin logosu görünecektir. Mülakat sonuç sayfasına kimlik
+                    numaranız ile giriş yaptıktan sonra eklenti simgesine tıklayın. sayfada açılacak penceredeki listeye
+                    ekle butonuna tıkladığınızda puanınız listeye eklenecektir.</p>
+
+                <hr>
+                <p>Diğer kullanıcılar hazırlanan javascript kodunu kullanarak mülakat puanını ekleyebilir.</p>
+                <p>
+                <ol>
+                    <li>İlk olarak <ahref="https://github.com/sametatabasch/boteMulakatSiralamasi/blob/master/mulakat.js">buraya</a>
+                        tıklayarak açılan sayfadaki kodların tamamını kopyalayın
+                    </li>
+                    <li>Sonrasında <a
+                                href="http://www.meb.gov.tr/sinavlar/sorgu/diger/Ss/2017/sozlesmeli_sonuc_fertdty345tr/Ss_Frm.asp">mülakat
+                            sonuç sayfasına</a> kimlik numaranızı yazarak giriş yapın.
+                    </li>
+                    <li>Mülakat sonucunuzun bulunduğu sayfada adres çubuğunu temizleyin ve javascript: yazıp hemen
+                        peşine kodu yapıştırın ve enter a basın.
+                    </li>
+                    <li>Ekranda açılan pencerede listeye ekle butonuna tıkladığınızda puanınız listeye eklenecektir.
+                    </li>
+                </ol>
+                </p>
             </div>
         </div>
     </div>
@@ -313,36 +341,7 @@
                 <h4 class="modal-title" id="yapimasamasiModalLabel">Mülakat Puanlarının Frekans Grafiği</h4>
             </div>
             <div class="modal-body">
-                <p> Bilgisayarında FireFox tarayıcı kullananlar aşağıdaki eklentiyi kurarak Mülakat puanlarını
-                    ekleyebilirler.</p>
-
-                <a class="btn btn-lg btn-success" href="http://bit.ly/2rtC8um"></a>
-                <p>Firefox tarayıcı kullananlar yukarıdaki linkte bulunan eklentiyi kullanarak mülakat puanını kolayca
-                    listeye ekleyebilirler.
-                    Butona tıklayıp eklentiyi indirin ve çalıştırarak kurulumu yapın. Eklentiyi kurduktan sonra
-                    Tarayıcınızın sağ üst köşesinde eklentinin logosu görünecektir. Mülakat sonuç sayfasına kimlik
-                    numaranız ile giriş yaptıktan sonra eklenti simgesine tıklayın. sayfada açılacak penceredeki listeye
-                    ekle butonuna tıkladığınızda puanınız listeye eklenecektir.</p>
-
-                <hr>
-                <p>Diğer kullanıcılar hazırlanan javascript kodunu kullanarak mülakat puanını ekleyebilir.</p>
-                <p>
-                <ol>
-                    <li>İlk olarak <a
-                                href="https://github.com/sametatabasch/boteMulakatSiralamasi/blob/master/mulakat.js">buraya</a>
-                        tıklayarak açılan sayfadaki kodların tamamını kopyalayın
-                    </li>
-                    <li>Sonrasında <a
-                                href="http://www.meb.gov.tr/sinavlar/sorgu/diger/Ss/2017/sozlesmeli_sonuc_fertdty345tr/Ss_Frm.asp">mülakat
-                            sonuç sayfasına</a> kimlik numaranızı yazarak giriş yapın.
-                    </li>
-                    <li>Mülakat sonucunuzun bulunduğu sayfada adres çubuğunu temizleyin ve javascript: yazıp hemen
-                        peşine kodu yapıştırın ve enter a basın.
-                    </li>
-                    <li>Ekranda açılan pencerede listeye ekle butonuna tıkladığınızda puanınız listeye eklenecektir.
-                    </li>
-                </ol>
-                </p>
+                Yapım Aşamasında
             </div>
         </div>
     </div>
