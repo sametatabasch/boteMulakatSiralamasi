@@ -19,7 +19,7 @@
 
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+
     <meta name="author" content="Samet ATABAŞ">
     <meta charset="utf-8"/>
     <!-- Google İzleme kodu -->
