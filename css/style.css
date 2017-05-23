@@ -12,6 +12,7 @@
 }
 .bg-red {
     background-color: #dd4b39 !important;
+    color: #fff !important;
 }
 .bg-red-active {
     background-color: #d33724 !important;
