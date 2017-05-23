@@ -56,7 +56,7 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>128</h3>
+                        <h3><?= $db->query("SELECT count(puan) as puanSayisi FROM `liste`")->fetch()['puanSayisi']?></h3>
 
                         <p>Mülakat puanı girildi</p>
                     </div>
@@ -72,7 +72,7 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>128</h3>
+                        <h3><?= $db->query("SELECT count(kpss) as kpssSayisi FROM `liste` WHERE kpss <> 0")->fetch()['kpssSayisi']?></h3>
 
                         <p>KPSS puanı girildi</p>
                     </div>
@@ -93,7 +93,7 @@
                         <p>En çok girilen Mülakat Puanu</p>
                     </div>
                     <div class="icon">
-                        <i class="glyphicon glyphicon-thumbs-up"></i>
+                        <i class="glyphicon glyphicon-stats"></i>
                     </div>
                     <a href="#" class="small-box-footer" data-toggle="modal" data-target=".mukalatFrekans">
                         DetaylıBilgi <i class="glyphicon glyphicon-circle-arrow-right"></i>
@@ -126,6 +126,7 @@
                 <th>Ekleme Tarihi</th>
                 </thead>
                 <tbody>
+
                 <?php $s = 1;
                 foreach ($db->query("SELECT puan,brans,tarih,kpss FROM liste ORDER BY puan DESC, kpss DESC ") as $row): ?>
                     <tr>
