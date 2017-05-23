@@ -54,7 +54,7 @@
         <div class="panel-body">
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-green">
+                <div class="small-box bg-aqua">
                     <div class="inner">
                         <h3><?= $db->query("SELECT count(puan) as puanSayisi FROM `liste`")->fetch()['puanSayisi']?></h3>
 
@@ -86,7 +86,7 @@
             </div>
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-green">
+                <div class="small-box bg-red">
                     <div class="inner">
                         <h3>85</h3>
 
