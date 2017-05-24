@@ -298,65 +298,10 @@
                 <h4 class="modal-title" id="mulakatPuaniEkleModalLabel">Mülakat Puanı Nasıl Eklenir</h4>
             </div>
             <div class="modal-body">
-                <iframe id="frame" src="proxy.php?http://www.meb.gov.tr/meb_sinavindex.php?dil=tr" width="100%"
-                        height="100%"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button id="mulakatPuaniEkle" class="btn btn-success">Mülakat PuanımıEkle</button>
-            </div>
-            <script>
-                $(function () {
-
-                    document.getElementById('frame').onload = function () {
-                        var frameDocument = $('#frame')[0].contentWindow.document;
-                        var link = frameDocument.querySelectorAll('.li_style_1 a[href*="2017/sozlesmeli_sonuc_fertdty345tr"]')[0];
-                        link.click();
-                    };
-                    $('#mulakatPuaniEkle').click(function () {
-                        var puan = document.getElementsByTagName('table')[2].childNodes[1].childNodes[4].innerText.replace(/[^\d.]/g, '');
-                        var brans = document.getElementsByTagName('table')[2].childNodes[1].childNodes[8].innerText.split("\n")[1].trim();
-                        var tcno = document.getElementsByTagName('table')[2].childNodes[1].childNodes[0].innerText.split("\n")[1].trim();
-
-                        if (brans === "Bilişim Teknolojileri") {
-                            $.ajax({
-                                type: 'POST',
-                                url: 'ekle.php',
-                                data: {'puan':puan,'brans':brans,'tcno':tcno},
-                                success: function (returnData) {
-                                    $('#frame').insertBefore(
-                                        '<div class="alert alert-' + returnData['status'] + ' alert-dismissable fade in">' +
-                                        '<i class="fa fa-check"></i>' +
-                                        '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
-                                        '' + returnData['msg'] +
-                                        '</div>'
-                                    );
-                                    var z = setInterval(function () {
-                                        $('.mulakatPuaniEkle .alert').alert('close');
-                                    }, 5000);
-                                }
-                            });
-
-                        } else alert("Bu kod sadece Bilişim Teknolojileri branşı için geçerlidir.");
-                    });
-                });
-            </script>
-        </div>
-    </div>
-</div>
-<!-- Yapım Aşaması modal-->
-<div class="modal fade  yapimasamasi" tabindex="-1" role="dialog" aria-labelledby="yapimasamasiModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="yapimasamasiModalLabel">Mülakat Puanlarının Frekans Grafiği</h4>
-            </div>
-            <div class="modal-body">
                 <p> Bilgisayarında FireFox tarayıcı kullananlar aşağıdaki eklentiyi kurarak Mülakat puanlarını
                     ekleyebilirler.</p>
 
-                <a class="btn btn-lg btn-success" href="http://bit.ly/2rtC8um"></a>
+                <a class="btn btn-lg btn-success" href="http://bit.ly/2rtC8um">Firefox Eklentisini indir.</a>
                 <p>Firefox tarayıcı kullananlar yukarıdaki linkte bulunan eklentiyi kullanarak mülakat puanını kolayca
                     listeye ekleyebilirler.
                     Butona tıklayıp eklentiyi indirin ve çalıştırarak kurulumu yapın. Eklentiyi kurduktan sonra
@@ -368,8 +313,7 @@
                 <p>Diğer kullanıcılar hazırlanan javascript kodunu kullanarak mülakat puanını ekleyebilir.</p>
                 <p>
                 <ol>
-                    <li>İlk olarak <a
-                                href="https://github.com/sametatabasch/boteMulakatSiralamasi/blob/master/mulakat.js">buraya</a>
+                    <li>İlk olarak <a href="https://github.com/sametatabasch/boteMulakatSiralamasi/blob/master/mulakat.js">buraya</a>
                         tıklayarak açılan sayfadaki kodların tamamını kopyalayın
                     </li>
                     <li>Sonrasında <a
@@ -383,6 +327,21 @@
                     </li>
                 </ol>
                 </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Yapım Aşaması modal-->
+<div class="modal fade  yapimasamasi" tabindex="-1" role="dialog" aria-labelledby="yapimasamasiModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="yapimasamasiModalLabel">Mülakat Puanlarının Frekans Grafiği</h4>
+            </div>
+            <div class="modal-body">
+                Yapım Aşamasında
             </div>
         </div>
     </div>
