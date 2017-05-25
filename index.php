@@ -238,7 +238,7 @@
                 <div class="alert alert-info" role="alert">
                     <div class="pull-left">
                         Lütfen sonucunuzu
-                        <a class="alert-link" href="https://sonuc.osym.gov.tr/Sorgu.aspx?SonucID=4110"> 2016 KPSS sonuç
+                        <a class="alert-link" target="_blank" href="https://sonuc.osym.gov.tr/Sorgu.aspx?SonucID=4110"> 2016 KPSS sonuç
                             Sayfasından</a>
                         kopyalayarak olduğu gibi yazın.
                     </div>
@@ -301,7 +301,7 @@
                 <p> Bilgisayarında FireFox tarayıcı kullananlar aşağıdaki eklentiyi kurarak Mülakat puanlarını
                     ekleyebilirler.</p>
 
-                <a class="btn btn-lg btn-success" href="http://bit.ly/2rtC8um">Firefox Eklentisini indir.</a>
+                <a class="btn btn-lg btn-success" target="_blank" href="http://bit.ly/2rtC8um">Firefox Eklentisini indir.</a>
                 <p>Firefox tarayıcı kullananlar yukarıdaki linkte bulunan eklentiyi kullanarak mülakat puanını kolayca
                     listeye ekleyebilirler.
                     Butona tıklayıp eklentiyi indirin ve çalıştırarak kurulumu yapın. Eklentiyi kurduktan sonra
@@ -313,11 +313,11 @@
                 <p>Diğer kullanıcılar hazırlanan javascript kodunu kullanarak mülakat puanını ekleyebilir.</p>
                 <p>
                 <ol>
-                    <li>İlk olarak <a href="https://github.com/sametatabasch/boteMulakatSiralamasi/blob/master/mulakat.js">buraya</a>
+                    <li>İlk olarak <a href="https://github.com/sametatabasch/boteMulakatSiralamasi/blob/master/mulakat.js" target="_blank">buraya</a>
                         tıklayarak açılan sayfadaki kodların tamamını kopyalayın
                     </li>
                     <li>Sonrasında <a
-                                href="http://www.meb.gov.tr/sinavlar/sorgu/diger/Ss/2017/sozlesmeli_sonuc_fertdty345tr/Ss_Frm.asp">mülakat
+                                href="http://www.meb.gov.tr/sinavlar/sorgu/diger/Ss/2017/sozlesmeli_sonuc_fertdty345tr/Ss_Frm.asp" target="_blank">mülakat
                             sonuç sayfasına</a> kimlik numaranızı yazarak giriş yapın.
                     </li>
                     <li>Mülakat sonucunuzun bulunduğu sayfada adres çubuğunu temizleyin ve javascript: yazıp hemen
