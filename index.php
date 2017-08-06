@@ -41,7 +41,8 @@
 
     </script>
     <script type="text/javascript" src="js/jquery.inputmask.bundle.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+    <!--Highchart  -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
 <div class="container">
@@ -192,32 +193,29 @@
                 $labels .= "]";
                 $data .= "]";
                 ?>
-                <canvas id="myChart" width="400" height="400"></canvas>
+                <div id="container" style="width:100%; height:400px;"></div>
                 <script>
-                    var ctx = document.getElementById("myChart");
-                    var myChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: <?= $labels ?>,
-                            datasets: [{
-                                label: '# Frekans Değeri',
-                                data: <?= $data ?>,
-                                backgroundColor: 'rgba(54, 162, 235, 0.4)',
-                                borderColor: 'rgba(0, 38, 255, 1)',
-                                borderWidth: 1
+                    $(function () {
+                        var myChart = Highcharts.chart('container', {
+                            chart: {
+                                type: 'line'
+                            },
+                            title: {
+                                text: 'P10 Frekans Grafiği'
+                            },
+                            xAxis: {
+                                categories: <?=$labels?>
+                            },
+                            yAxis: {
+                                title: {
+                                    text: 'P10 Puanı'
+                                }
+                            },
+                            series: [{
+                                name: 'Frekans',
+                                data: <?=$data?>
                             }]
-                        },
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        max: 20,
-                                        min: 0,
-                                        stepSize: 1
-                                    }
-                                }]
-                            }
-                        }
+                        });
                     });
                 </script>
 
