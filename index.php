@@ -3,22 +3,24 @@
 <html>
 <head>
     <title>BÖTE Mülakat Sıralaması</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui viewport-fit=cover">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+
     <!-- Optional theme -->
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script src="js/jquery-1.12.3.js"></script>
 
     <!-- Datatable -->
-    <link rel="stylesheet" type="text/css"
-          href="https://cdn.datatables.net/v/bs/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.3/dt-1.10.16/r-2.2.1/datatables.min.css"/>
 
-    <script type="text/javascript"
-            src="https://cdn.datatables.net/v/bs/jqc-1.12.3/dt-1.10.12/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jqc-1.12.3/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
 
-
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- tarih sıralamasını yaptırabilmek için ekliyorum. https://datatables.net/blog/2014-12-18 -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.16/sorting/datetime-moment.js"></script>
 
     <meta name="author" content="Samet ATABAŞ">
     <meta charset="utf-8"/>
@@ -40,6 +42,7 @@
         ga('send', 'pageview');
 
     </script>
+    <!-- inputmask-->
     <script type="text/javascript" src="js/jquery.inputmask.bundle.min.js"></script>
     <!--Highchart  -->
     <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -49,10 +52,19 @@
     <div class="panel panel-primary">
         <!-- Default panel contents -->
         <div class="panel-heading">
-            <h3 class="panel-title">BÖTE Mülakat Sıralaması</h3>
-
+            <h2 class="panel-title pull-left">BÖTE Mülakat Sıralaması</h2>
+            <div class="pull-right">
+                <a href="https://github.com/sametatabasch/botebranssiralamasi" target="_blank" style="color:white">
+                    <svg aria-hidden="true" version="1.1" viewBox="0 0 16 16" width="32" class="pull-right" height="20">
+                        <path fill-rule="evenodd"
+                              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    Github</a>
+            </div>
+            <div class="clearfix"></div>
         </div>
         <div class="panel-body">
+            <!-- Mülakat puanı small box-->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
@@ -69,6 +81,7 @@
                     </a>
                 </div>
             </div>
+            <!-- Kpss Puanı Small box-->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
@@ -85,6 +98,7 @@
                     </a>
                 </div>
             </div>
+            <!-- Mülakat Grafiği small box -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-red">
@@ -101,6 +115,7 @@
                     </a>
                 </div>
             </div>
+            <!-- Kpss - Mülakat fark grafiği Small box -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
@@ -117,14 +132,15 @@
                     </a>
                 </div>
             </div>
+
             <!-- Table -->
             <table id="siralamaListesi" class="table table-responsive table-striped table-bordered dataTable">
                 <thead>
-                <th>Sıra</th>
-                <th>Mülakat</th>
-                <th>KPSS</th>
-                <th>Branş</th>
-                <th>Ekleme Tarihi</th>
+                    <th>Sıra</th>
+                    <th>Mülakat</th>
+                    <th>KPSS</th>
+                    <th>Branş</th>
+                    <th>Ekleme Tarihi</th>
                 </thead>
                 <tbody>
 
@@ -143,6 +159,7 @@
 
             <script type="text/javascript">
                 $(document).ready(function () {
+                    $.fn.dataTable.moment( 'DD.MM.YYYY' );
                     $('#siralamaListesi').DataTable({
                         "language": {
                             "sProcessing": "İşleniyor...",
@@ -167,6 +184,7 @@
             </script>
         </div>
         <div class="panel-footer">
+            <a class="pull-left" href="/2016">2016 Listesi</a>
             <a class="pull-right" href="http://gencbilisim.net">Samet Atabaş - GençBilişim.net</a>
             <div class="clearfix"></div>
         </div>
@@ -174,181 +192,37 @@
 </div>
 
 <!-- Grafik modal-->
-<div class="modal fade  mukalatFrekans" tabindex="-1" role="dialog" aria-labelledby="mulakatFrakansModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="mulakatFrakansModalLabel">Mülakat Puanlarının Frekans Grafiği</h4>
-            </div>
-            <div class="modal-body">
-                <?php
-                $labels = "[";
-                $data = "[";
-                foreach ($db->query("SELECT puan,count(*) AS frekans  FROM `liste` GROUP BY puan ORDER BY puan") as $row) {
-                    $labels .= '"' . $row['puan'] . '",';
-                    $data .= $row['frekans'] . ",";
-                }
-                $labels .= "]";
-                $data .= "]";
-                ?>
-                <div id="container" style="width:100%; height:400px;"></div>
-                <script>
-                    $(function () {
-                        var myChart = Highcharts.chart('container', {
-                            chart: {
-                                type: 'line'
-                            },
-                            title: {
-                                text: 'P10 Frekans Grafiği'
-                            },
-                            xAxis: {
-                                categories: <?=$labels?>
-                            },
-                            yAxis: {
-                                title: {
-                                    text: 'P10 Puanı'
-                                }
-                            },
-                            series: [{
-                                name: 'Frekans',
-                                data: <?=$data?>
-                            }]
-                        });
-                    });
-                </script>
-
-            </div>
-        </div>
-    </div>
-</div>
+<?php require_once "mulakatGrafikModal.php"; ?>
 <!-- KPSS Puan gir Modal -->
-<div class="modal fade kpssPuanGir" tabindex="-1" role="dialog" aria-labelledby="kpssModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="kpssModalLabel">Kpss Puanı Ekle</h4>
-            </div>
-            <div class="modal-body" id="kpssPuanGirModalBody">
-                <div class="alert alert-info" role="alert">
-                    <div class="pull-left">
-                        Lütfen sonucunuzu
-                        <a class="alert-link" target="_blank" href="https://sonuc.osym.gov.tr/Sorgu.aspx?SonucID=4110"> 2016 KPSS sonuç
-                            Sayfasından</a>
-                        kopyalayarak olduğu gibi yazın.
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
-
-                <form name="kpssPuanGir" id="kpssPuanGir" method="post" action="kpssEkle.php">
-                    <div class="form-group">
-                        <label for="tcno">TC NO:</label>
-                        <input class="form-control" type="text" data-inputmask="'mask': '9{11}'"
-                               name="tcno" id="tcno" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="kpss">Kpss Puanı:</label>
-                        <input class="form-control" data-inputmask="'mask': '1{*}9{1,2}.9{1,4}'"
-                               id="kpss" name="kpss" required>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control btn btn-default" type="submit" value="Kaydet">
-                    </div>
-                </form>
-                <script type="text/javascript">
-                    $('#kpssPuanGir').on('submit', function () {
-                        $.ajax({
-                            type: 'POST',
-                            url: $(this).attr('action'),
-                            data: $(this).serializeArray(),
-                            success: function (returnData) {
-                                $('#kpssPuanGirModalBody').append(
-                                    '<div class="alert alert-' + returnData['status'] + ' alert-dismissable fade in">' +
-                                    '<i class="fa fa-check"></i>' +
-                                    '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
-                                    '' + returnData['msg'] +
-                                    '</div>'
-                                );
-                                $('#kpssPuanGir')[0].reset();
-                                var z = setInterval(function () {
-                                    $('#kpssPuanGirModalBody .alert').alert('close');
-                                }, 5000);
-                            }
-                        });
-                        return false;
-                    });
-                </script>
-            </div>
-        </div>
-    </div>
-</div>
+<?php require_once "kpssPuaniGirModal.php"; ?>
 <!-- Mülakat Puanı ekle modal-->
-<div class="modal fade  mulakatPuaniEkle" tabindex="-1" role="dialog" aria-labelledby="mulakatPuaniEkleModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="mulakatPuaniEkleModalLabel">Mülakat Puanı Nasıl Eklenir</h4>
-            </div>
-            <div class="modal-body">
-                <p> Bilgisayarında FireFox tarayıcı kullananlar aşağıdaki eklentiyi kurarak Mülakat puanlarını
-                    ekleyebilirler.</p>
-
-                <a class="btn btn-lg btn-success" target="_blank" href="http://bit.ly/2rtC8um">Firefox Eklentisini indir.</a>
-                <p>Firefox tarayıcı kullananlar yukarıdaki linkte bulunan eklentiyi kullanarak mülakat puanını kolayca
-                    listeye ekleyebilirler.
-                    Butona tıklayıp eklentiyi indirin ve çalıştırarak kurulumu yapın. Eklentiyi kurduktan sonra
-                    Tarayıcınızın sağ üst köşesinde eklentinin logosu görünecektir. Mülakat sonuç sayfasına kimlik
-                    numaranız ile giriş yaptıktan sonra eklenti simgesine tıklayın. sayfada açılacak penceredeki listeye
-                    ekle butonuna tıkladığınızda puanınız listeye eklenecektir.</p>
-
-                <hr>
-                <p>Diğer kullanıcılar hazırlanan javascript kodunu kullanarak mülakat puanını ekleyebilir.</p>
-                <p>
-                <ol>
-                    <li>İlk olarak <a href="https://github.com/sametatabasch/boteMulakatSiralamasi/blob/master/mulakat.js" target="_blank">buraya</a>
-                        tıklayarak açılan sayfadaki kodların tamamını kopyalayın
-                    </li>
-                    <li>Sonrasında <a
-                                href="http://www.meb.gov.tr/sinavlar/sorgu/diger/Ss/2017/sozlesmeli_sonuc_fertdty345tr/Ss_Frm.asp" target="_blank">mülakat
-                            sonuç sayfasına</a> kimlik numaranızı yazarak giriş yapın.
-                    </li>
-                    <li>Mülakat sonucunuzun bulunduğu sayfada adres çubuğunu temizleyin ve javascript: yazıp hemen
-                        peşine kodu yapıştırın ve enter a basın.
-                    </li>
-                    <li>Ekranda açılan pencerede listeye ekle butonuna tıkladığınızda puanınız listeye eklenecektir.
-                    </li>
-                </ol>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+<?php require_once "mulakatPuaniEkleModal.php"; ?>
 <!-- Yapım Aşaması modal-->
-<div class="modal fade  yapimasamasi" tabindex="-1" role="dialog" aria-labelledby="yapimasamasiModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="yapimasamasiModalLabel">Mülakat Puanlarının Frekans Grafiği</h4>
-            </div>
-            <div class="modal-body">
-                Yapım Aşamasında
-            </div>
-        </div>
-    </div>
-</div>
+<?php require_once "yapimAsamasindaModal.php"; ?>
+
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $(":input").inputmask();
     });
 </script>
+
+<!-- Admatic interstitial 320x480 Ad Code START -->
+<ins data-publisher="adm-pub-139630885245" data-ad-type="interstitial" class="adm-ads-area"
+     data-ad-network="167662869748" data-ad-sid="206" data-ad-width="320" data-ad-height="480"></ins>
+<script src="//cdn2.admatic.com.tr/showad/showad.js" async></script>
+<!-- Admatic interstitial 320x480 Ad Code END -->
+<!-- Admatic interstitial 800x600 Ad Code START -->
+<ins data-publisher="adm-pub-139630885245" data-ad-type="interstitial" class="adm-ads-area"
+     data-ad-network="167662869748" data-ad-sid="209" data-ad-width="800" data-ad-height="600"></ins>
+<script src="//cdn2.admatic.com.tr/showad/showad.js" async></script>
+<!-- Admatic interstitial 800x600 Ad Code END -->
+
+<!-- Admatic Scroll 300x250 Ad Code START -->
+<ins data-publisher="adm-pub-139630885245" data-ad-type="Scroll" class="adm-ads-area" data-ad-network="167662869748"
+     data-ad-sid="304" data-ad-width="300" data-ad-height="250"></ins>
+<script src="//cdn2.admatic.com.tr/showad/showad.js" async></script>
+<!-- Admatic Scroll 300x250 Ad Code END -->
+
 </body>
 </html>
