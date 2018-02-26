@@ -103,9 +103,9 @@
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>85</h3>
+                        <h3><?= $db->query("SELECT MAX(puan) AS maxPuan FROM liste")->fetch()['maxPuan'] ?></h3>
 
-                        <p>En çok girilen Mülakat Puanu</p>
+                        <p>Girilen en yüksek mülakat Puanı</p>
                     </div>
                     <div class="icon">
                         <i class="glyphicon glyphicon-stats"></i>
@@ -120,14 +120,14 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>+5</h3>
+                        <h3><?= $db->query("SELECT Max(ROUND(puan-kpss,2)) AS maxFark FROM liste")->fetch()['maxFark'] ?></h3>
 
                         <p>En yüksek KPSS - Mülakat Farkı</p>
                     </div>
                     <div class="icon">
                         <i class="glyphicon glyphicon-sort"></i>
                     </div>
-                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".yapimasamasi">
+                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".mulakat-KPSS">
                         DetaylıBilgi <i class="glyphicon glyphicon-circle-arrow-right"></i>
                     </a>
                 </div>

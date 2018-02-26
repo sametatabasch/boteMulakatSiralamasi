@@ -18,7 +18,7 @@
                 <div class="alert alert-info" role="alert">
                     <div class="pull-left">
                         Lütfen sonucunuzu
-                        <a class="alert-link" target="_blank" href="https://sonuc.osym.gov.tr/Sorgu.aspx?SonucID=4110"> 2016 KPSS sonuç
+                        <a class="alert-link" target="_blank" href="https://sonuc.osym.gov.tr/Sorgu.aspx?SonucID=4292"> 2017 KPSS sonuç
                             Sayfasından</a>
                         kopyalayarak olduğu gibi yazın.
                     </div>

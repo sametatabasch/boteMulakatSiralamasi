@@ -64,7 +64,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="panel-body">
-            <!-- Mülakat puanı small box-->
+            <!-- Mülakat puanı Ekle small box-->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
@@ -81,7 +81,7 @@
                     </a>
                 </div>
             </div>
-            <!-- Kpss Puanı Small box-->
+            <!-- Kpss Puanı Ekle Small box-->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
@@ -103,9 +103,9 @@
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>85</h3>
+                        <h3><?= $db->query("SELECT MAX(puan) AS maxPuan FROM liste")->fetch()['maxPuan'] ?></h3>
 
-                        <p>En çok girilen Mülakat Puanu</p>
+                        <p>Girilen en yüksek mülakat Puanı</p>
                     </div>
                     <div class="icon">
                         <i class="glyphicon glyphicon-stats"></i>
@@ -120,14 +120,14 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>+5</h3>
+                        <h3><?= $db->query("SELECT Max(ROUND(puan-kpss,2)) AS maxFark FROM liste")->fetch()['maxFark'] ?></h3>
 
                         <p>En yüksek KPSS - Mülakat Farkı</p>
                     </div>
                     <div class="icon">
                         <i class="glyphicon glyphicon-sort"></i>
                     </div>
-                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".yapimasamasi">
+                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".mulakat-KPSS">
                         DetaylıBilgi <i class="glyphicon glyphicon-circle-arrow-right"></i>
                     </a>
                 </div>
@@ -198,7 +198,7 @@
 <!-- Mülakat Puanı ekle modal-->
 <?php require_once "mulakatPuaniEkleModal.php"; ?>
 <!-- Yapım Aşaması modal-->
-<?php require_once "yapimAsamasindaModal.php"; ?>
+<?php require_once "mulakatPuaniEkleModal.php"; ?>
 
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
