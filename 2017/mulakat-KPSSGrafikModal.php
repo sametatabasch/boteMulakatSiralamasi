@@ -6,7 +6,7 @@
  * Time: 16:07
  */
 ?>
-<div class="modal fade mukalat-KPSS" tabindex="-1" role="dialog" aria-labelledby="mulakat-KPSSModalLabel">
+<div class="modal fade mulakat-KPSS" tabindex="-1" role="dialog" aria-labelledby="mulakat-KPSSModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">

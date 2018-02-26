@@ -103,7 +103,7 @@
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3><?= $db->query("SELECT MAX(puan) AS maxPuan FROM liste")->fetch()['maxPuan'] ?></h3>
+                        <h3><?= $db->query("SELECT ROUND(MAX(puan),3) AS maxPuan FROM liste")->fetch()['maxPuan'] ?></h3>
 
                         <p>Girilen en yüksek mülakat Puanı</p>
                     </div>
