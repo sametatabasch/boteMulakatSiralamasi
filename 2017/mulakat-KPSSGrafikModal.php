@@ -18,14 +18,14 @@
                 <?php
                 $labels = "[";
                 $data = "[";
-                foreach ($db->query("SELECT ROUND(puan-kpss) As fark,count(ROUND(puan-kpss)) AS frekans FROM liste GROUP BY fark") as $row) {
+                foreach ($db->query("SELECT ROUND(puan-kpss,1) As fark,count(ROUND(puan-kpss,1)) AS frekans FROM liste GROUP BY fark") as $row) {
                     $labels .= '"' . $row['fark'] . '",';
                     $data .= $row['frekans'] . ",";
                 }
                 $labels .= "]";
                 $data .= "]";
                 ?>
-                <div class="container">
+                <div>
                     <div id="farkGrafik" style="width:100%; height:400px;"></div>
                 </div>
                 <script>
@@ -46,7 +46,7 @@
                                 }
                             },
                             series: [{
-                                name: 'Fark',
+                                name: 'Frekans',
                                 data: <?=$data?>
                             }]
                         });

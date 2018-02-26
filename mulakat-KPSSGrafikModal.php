@@ -25,7 +25,7 @@
                 $labels .= "]";
                 $data .= "]";
                 ?>
-                <div class="container">
+                <div>
                     <div id="farkGrafik" style="width:100%; height:400px;"></div>
                 </div>
                 <script>
@@ -46,7 +46,7 @@
                                 }
                             },
                             series: [{
-                                name: 'Fark',
+                                name: 'Frekans',
                                 data: <?=$data?>
                             }]
                         });
