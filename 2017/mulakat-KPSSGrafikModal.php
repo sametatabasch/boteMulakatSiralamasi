@@ -18,17 +18,19 @@
                 <?php
                 $labels = "[";
                 $data = "[";
-                foreach ($db->query("SELECT ROUND(puan-kpss,2) AS fark FROM liste GROUP BY fark") as $row) {
+                foreach ($db->query("SELECT ROUND(puan-kpss) As fark,count(ROUND(puan-kpss)) AS frekans FROM liste GROUP BY fark") as $row) {
                     $labels .= '"' . $row['fark'] . '",';
-                    $data .= $row['fark'] . ",";
+                    $data .= $row['frekans'] . ",";
                 }
                 $labels .= "]";
                 $data .= "]";
                 ?>
-                <div id="container" style="width:100%; height:400px;"></div>
+                <div class="container">
+                    <div id="farkGrafik" style="width:100%; height:400px;"></div>
+                </div>
                 <script>
                     $(function () {
-                        var myChart = Highcharts.chart('container', {
+                        var myChart = Highcharts.chart('farkGrafik', {
                             chart: {
                                 type: 'line'
                             },
