@@ -197,8 +197,8 @@
 <?php require_once "kpssPuaniGirModal.php"; ?>
 <!-- Mülakat Puanı ekle modal-->
 <?php require_once "mulakatPuaniEkleModal.php"; ?>
-<!-- Yapım Aşaması modal-->
-<?php require_once "mulakatPuaniEkleModal.php"; ?>
+<!-- Mülakat-KPSS modal-->
+<?php require_once "mulakat-KPSSGrafikModal.php"; ?>
 
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
