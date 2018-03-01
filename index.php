@@ -77,7 +77,7 @@
                         <i class="glyphicon glyphicon-thumbs-up"></i>
                     </div>
                     <a href="#" class="small-box-footer" data-toggle="modal" data-target=".mulakatPuaniEkle">
-                        Sende Ekle <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                        Sen de Ekle <i class="glyphicon glyphicon-circle-arrow-right"></i>
                     </a>
                 </div>
             </div>
