@@ -27,11 +27,11 @@ require_once "functions.php"; ?>
 <body>
 <?php
 $puan = floatval(strip_tags(trim(str_replace(',', '.', $_GET['p']))));
-$tcno = strval(strip_tags(trim($_GET['t'])));
+$kpss = floatval(strip_tags(trim(str_replace(',', '.', $_GET['k'])));
 $brans = strval(strip_tags(trim($_GET['b'])));
-$tcno= md5(sha1($tcno));
-if ($puan<100 && $puan>60 && $brans==="Bilişim Teknolojileri")
-    listeyeEkle($puan, $tcno, $brans);
+
+if ($puan<100 && $puan>=50 && $brans==="Bilişim Teknolojileri")
+    listeyeEkle($puan, $kpss, $brans);
 else echo 'Hatalı Giriş';
 ?>
 

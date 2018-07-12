@@ -19,16 +19,15 @@ try {
     echo 'Hata: ' . $e->getMessage();
 }
 
-function listeyeEkle($puan, $tcno, $brans)
+function listeyeEkle($puan, $kpss, $brans)
 {
     global $db;
     $tarih = date('d.m.Y');
-    $kpss = 0;
+    $kpss = $kpss;
     try {
-        $query = $db->prepare("REPLACE INTO liste (puan,kpss,tcno,brans,tarih) VALUES (:puan,:kpss,:tcno,:brans,:tarih)");
+        $query = $db->prepare("REPLACE INTO liste2018 (puan,kpss,brans,tarih) VALUES (:puan,:kpss,:brans,:tarih)");
         $query->bindParam(':puan', $puan);
         $query->bindParam(':kpss', $kpss);
-        $query->bindParam(':tcno', $tcno);
         $query->bindParam(':brans', $brans);
         $query->bindParam(':tarih', $tarih);
         $query->execute();
@@ -38,6 +37,7 @@ function listeyeEkle($puan, $tcno, $brans)
 }
 
 /**
+ *kullanılmıyor
  * @param $tcno
  * @param $kpss
  * @return array
