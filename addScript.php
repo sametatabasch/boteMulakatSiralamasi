@@ -9,6 +9,8 @@ echo  '(function () {
     // 2018 mulakatı için hostname ile kontrol etmek daha hızlı sabah sabah vaktim yok :)
     if (location.hostname === "www.meb.gov.tr") {
 
+        // kpss de direk alınsın dersen bu sene kolaylık olabilir gene de sen bilirsin
+        var kpss = document.getElementsByTagName("table")[0].childNodes[1].childNodes[14].innerText.replace(/[^\d.]/g, "");
         var puan = document.getElementsByTagName("table")[0].childNodes[1].childNodes[16].innerText.replace(/[^\d.]/g, "");
         var brans = document.getElementsByTagName("table")[0].childNodes[1].childNodes[8].childNodes[3].innerText.replace(/[*]/g, "").trim();
         var tcno = document.getElementsByTagName("table")[0].childNodes[1].childNodes[0].innerText.replace(/[^\d.]/g, "");
