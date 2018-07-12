@@ -26,8 +26,10 @@ require_once "functions.php"; ?>
 </head>
 <body>
 <?php
-$puan = floatval(strip_tags(trim(str_replace(',', '.', $_GET['p']))));
-$kpss = floatval(strip_tags(trim(str_replace(',', '.', $_GET['k'])));
+//$puan = floatval(strip_tags(trim(str_replace(',', '.', $_GET['p']))));
+// bu sene zaten puan noktalı halde yazılmış
+$puan = floatval(strip_tags(trim($_GET['p'])));
+$kpss = floatval(strip_tags(trim($_GET['k'])));
 $brans = strval(strip_tags(trim($_GET['b'])));
 
 if ($puan<100 && $puan>=50 && $brans==="Bilişim Teknolojileri")
