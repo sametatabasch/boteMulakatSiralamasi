@@ -27,7 +27,7 @@ require_once "functions.php"; ?>
 <body>
 <?php
 $puan = floatval(strip_tags(trim(str_replace(',', '.', $_GET['p']))));
-$kpss = floatval(strip_tags(trim(str_replace(',', '.', $_GET['k'])));
+$kpss = floatval(strip_tags(trim(str_replace(',', '.', $_GET['k']))));
 $brans = strval(strip_tags(trim($_GET['b'])));
 
 if ($puan<100 && $puan>=50 && $brans==="Bilişim Teknolojileri")
