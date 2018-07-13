@@ -27,7 +27,7 @@
                         </pre>
                     </li>
                     <li>Sonrasında <a
-                            href="http://www.meb.gov.tr/sinavlar/sorgu/diger/Ss/2017/sozlesmeli_sonuc_fertdty345tr/Ss_Frm.asp" target="_blank">mülakat
+                            href="http://www.meb.gov.tr/sinavlar/sonuc/sorgu.php?SINAV_ID=AF790FD1749F8A2A6A876F0EEEB7DC2D" target="_blank">mülakat
                             sonuç sayfasına</a> kimlik numaranızı yazarak giriş yapın.
                     </li>
                     <li>Mülakat sonucunuzun bulunduğu sayfada adres çubuğunu temizleyin ve javascript: yazıp hemen
