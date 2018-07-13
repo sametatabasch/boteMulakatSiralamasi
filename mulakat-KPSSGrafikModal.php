@@ -18,7 +18,7 @@
                 <?php
                 $labels = "[";
                 $data = "[";
-                foreach ($db->query("SELECT ROUND(puan-kpss) As fark,count(ROUND(puan-kpss)) AS frekans FROM liste GROUP BY fark") as $row) {
+                foreach ($db->query("SELECT ROUND(puan-kpss) As fark,count(ROUND(puan-kpss)) AS frekans FROM liste2018 GROUP BY fark") as $row) {
                     $labels .= '"' . $row['fark'] . '",';
                     $data .= $row['frekans'] . ",";
                 }
