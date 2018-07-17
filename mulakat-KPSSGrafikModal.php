@@ -16,13 +16,10 @@
             </div>
             <div class="modal-body">
                 <?php
-                $labels = "[";
                 $data = "[";
                 foreach ($db->query("SELECT ROUND(puan-kpss) As fark,count(ROUND(puan-kpss)) AS frekans FROM liste GROUP BY fark") as $row) {
-                    $labels .= '"' . $row['fark'] . '",';
                     $data .= $row['frekans'] . ",";
                 }
-                $labels .= "]";
                 $data .= "]";
                 ?>
                 <div>
@@ -32,13 +29,13 @@
                     $(function () {
                         var myChart = Highcharts.chart('farkGrafik', {
                             chart: {
-                                type: 'line'
+                                type: 'bar'
                             },
                             title: {
                                 text: 'Mülakat-KPSS Fark grafiği'
                             },
                             xAxis: {
-                                categories: <?=$labels?>
+                                categories: ["Azalan","Artan"]
                             },
                             yAxis: {
                                 title: {
