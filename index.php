@@ -65,11 +65,11 @@
         </div>
         <div class="panel-body">
             <!-- Mülakat puanı Ekle small box-->
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-4 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3><?= $db->query("SELECT count(puan) AS puanSayisi FROM `liste`")->fetch()['puanSayisi'] ?></h3>
+                        <h3><?= $db->query("SELECT count(puan) AS puanSayisi FROM `liste2018`")->fetch()['puanSayisi'] ?></h3>
 
                         <p>Mülakat puanı girildi</p>
                     </div>
@@ -77,33 +77,16 @@
                         <i class="glyphicon glyphicon-thumbs-up"></i>
                     </div>
                     <a href="#" class="small-box-footer" data-toggle="modal" data-target=".mulakatPuaniEkle">
-                        Sende Ekle <i class="glyphicon glyphicon-circle-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <!-- Kpss Puanı Ekle Small box-->
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-green">
-                    <div class="inner">
-                        <h3><?= $db->query("SELECT count(kpss) AS kpssSayisi FROM `liste` WHERE kpss <> 0")->fetch()['kpssSayisi'] ?></h3>
-
-                        <p>KPSS puanı girildi</p>
-                    </div>
-                    <div class="icon">
-                        <i class="glyphicon glyphicon-thumbs-up"></i>
-                    </div>
-                    <a href="#" class="small-box-footer" data-toggle="modal" data-target=".kpssPuanGir">
-                        Sende Ekle <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                        Sen de Ekle <i class="glyphicon glyphicon-circle-arrow-right"></i>
                     </a>
                 </div>
             </div>
             <!-- Mülakat Grafiği small box -->
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-4 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3><?= $db->query("SELECT ROUND(MAX(puan),3) AS maxPuan FROM liste")->fetch()['maxPuan'] ?></h3>
+                        <h3><?= $db->query("SELECT ROUND(MAX(puan),3) AS maxPuan FROM liste2018")->fetch()['maxPuan'] ?></h3>
 
                         <p>Girilen en yüksek mülakat Puanı</p>
                     </div>
@@ -116,11 +99,11 @@
                 </div>
             </div>
             <!-- Kpss - Mülakat fark grafiği Small box -->
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-4 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3><?= $db->query("SELECT Max(ROUND(puan-kpss,2)) AS maxFark FROM liste")->fetch()['maxFark'] ?></h3>
+                        <h3><?= $db->query("SELECT Max(ROUND(puan-kpss,2)) AS maxFark FROM liste2018")->fetch()['maxFark'] ?></h3>
 
                         <p>En yüksek KPSS - Mülakat Farkı</p>
                     </div>
@@ -145,7 +128,7 @@
                 <tbody>
 
                 <?php $s = 1;
-                foreach ($db->query("SELECT puan,brans,tarih,kpss FROM liste ORDER BY puan DESC, kpss DESC ") as $row): ?>
+                foreach ($db->query("SELECT puan,brans,tarih,kpss FROM liste2018 ORDER BY puan DESC, kpss DESC ") as $row): ?>
                     <tr>
                         <td><?= $s ?></td>
                         <td><?= $row['puan'] ?></td>
