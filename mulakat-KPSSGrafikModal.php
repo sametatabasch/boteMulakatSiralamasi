@@ -17,7 +17,7 @@
             <div class="modal-body">
                 <?php
                 $data = "[";
-                foreach ($db->query("SELECT ROUND(puan-kpss) As fark,count(ROUND(puan-kpss)) AS frekans FROM liste GROUP BY fark") as $row) {
+                foreach ($db->query("SELECT ROUND(puan-kpss) As fark,count(ROUND(puan-kpss)) AS frekans FROM liste2018 GROUP BY fark") as $row) {
                     $data .= $row['frekans'] . ",";
                 }
                 $data .= "]";
